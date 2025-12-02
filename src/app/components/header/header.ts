@@ -1,5 +1,4 @@
 import {Component, inject, OnInit} from '@angular/core';
-import {Button} from 'primeng/button';
 import {TranslatePipe, TranslateService} from "@ngx-translate/core";
 
 import {NgClass} from '@angular/common';
@@ -9,7 +8,6 @@ type Lang = 'en' | 'es';
 @Component({
   selector: 'app-header',
   imports: [
-    Button,
     NgClass,
     TranslatePipe
   ],

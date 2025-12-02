@@ -10,12 +10,22 @@
                backdrop-blur-3xl text-slate-100">
       <div class="flex justify-between items-center md:hidden px-2">
         <a class="text-emerald-300 font-bold" href="/" data-discover="true">Portfolio</a>
-        <p-button
-          icon="pi pi-bars"
-          aria-label="Abrir menú"
-          variant="text"
-          (onClick)="toggleMobileMenu()">
-        </p-button>
+
+        <button
+          (click)="toggleMobileMenu()"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+               class="lucide lucide-text-align-justify-icon lucide-text-align-justify"
+
+          >
+            <path d="M3 5h18"/>
+            <path d="M3 12h18"/>
+            <path d="M3 19h18"/>
+          </svg>
+
+        </button>
+
       </div>
       <div
         class="
@@ -33,10 +43,10 @@
             hover:bg-white/15 transition whitespace-nowrap">
             <i class="pi pi-home text-slate-300"></i>
             {{ 'home' | translate }}</a>
-        <!--  <a href="#inicio" class="inline-flex items-center gap-1 px-2 py-1 rounded-md
-            hover:bg-white/15 transition whitespace-nowrap">
-            <i class="pi pi-user text-slate-300"></i>
-            {{ 'about' |translate }}</a>-->
+          <!--  <a href="#inicio" class="inline-flex items-center gap-1 px-2 py-1 rounded-md
+              hover:bg-white/15 transition whitespace-nowrap">
+              <i class="pi pi-user text-slate-300"></i>
+              {{ 'about' |translate }}</a>-->
           <a href="#inicio" class="inline-flex items-center gap-1 px-2 py-1 rounded-md
             hover:bg-white/15 transition whitespace-nowrap">
             <i class="pi pi-code text-slate-300"></i>

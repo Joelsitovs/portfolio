@@ -1,6 +1,4 @@
 @import "tailwindcss";
-@import "tailwindcss-primeui";
-@import "primeicons/primeicons.css";
 @import "gridstack/dist/gridstack.min.css";
 
 @custom-variant dark (&:where(.my-app-dark, .my-app-dark *));
