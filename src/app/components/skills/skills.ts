@@ -10,15 +10,14 @@ import {GridStackOptions} from 'gridstack';
   templateUrl: './skills.html',
   styleUrl: './skills.css',
 })
-export class Skills implements OnInit{
+export class Skills {
+  constructor() {
+    console.log('Skills constructor');
+  }
   frontendGridOptions: GridStackOptions = {
     column: 2,
     margin: 5,
     cellHeight: 120,
     float: true,
   };
-  ngOnInit() {
-    console.log('🔥 ngOnInit SkillsComponent');
-  }
-
 }

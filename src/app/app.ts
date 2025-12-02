@@ -1,4 +1,6 @@
-import {Component, inject
+import {
+  AfterViewInit,
+  Component, ElementRef, inject, OnInit, signal, ViewChild
 } from '@angular/core';
 import {Header} from './components/header/header';
 import {TranslateService} from '@ngx-translate/core';
@@ -15,12 +17,9 @@ export class App {
 
   constructor() {
     this.translate.addLangs(['es', 'en']);
-
     const saved = (localStorage.getItem('lang') as 'es' | 'en') ?? 'es';
-
     this.translate.setDefaultLang('es');
     this.translate.use(saved);
+
   }
-
-
 }
