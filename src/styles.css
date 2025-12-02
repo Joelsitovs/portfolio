@@ -1,1 +1,97 @@
-/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+@import "tailwindcss-primeui";
+@import "primeicons/primeicons.css";
+@import "gridstack/dist/gridstack.min.css";
+
+@custom-variant dark (&:where(.my-app-dark, .my-app-dark *));
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  color: #ffffff;
+  font-family: "Space Grotesk", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+/*  background: radial-gradient(circle at 50% 20%, #111827 0, #000000 55%) fixed no-repeat;
+  background-size: cover;*/
+  background:
+    radial-gradient(circle at 50% 35%,
+    rgba(56, 189, 248, 0.14) 0%,
+    rgba(56, 189, 248, 0.07) 22%,
+    rgba(56, 189, 248, 0.03) 40%,
+    transparent 60%),
+
+    radial-gradient(circle at 50% 35%,
+    rgba(56, 189, 248, 0.08) 0%,
+    transparent 26%),
+
+    radial-gradient(circle at 50% 65%,
+    rgba(236, 72, 153, 0.13) 0%,
+    rgba(236, 72, 153, 0.06) 22%,
+    rgba(236, 72, 153, 0.03) 40%,
+    transparent 60%),
+
+    radial-gradient(circle at 50% 65%,
+    rgba(236, 72, 153, 0.07) 0%,
+    transparent 26%),
+
+    radial-gradient(circle at center,
+    #020617 0%,
+    #020617 35%,
+    #000000 80%);
+
+  background-repeat: no-repeat;
+  background-size: 140% 140%, 140% 140%, 140% 140%, 140% 140%, cover;
+  background-attachment: fixed;
+
+  animation: glow-move 18s ease-in-out infinite alternate;
+}
+@keyframes glow-move {
+  0% {
+    background-position:
+      48% 32%, 48% 32%,
+      52% 68%, 52% 68%,
+      center;
+  }
+  50% {
+    background-position:
+      52% 36%, 52% 36%,
+      48% 64%, 48% 64%,
+      center;
+  }
+  100% {
+    background-position:
+      50% 34%, 50% 34%,
+      50% 66%, 50% 66%,
+      center;
+  }
+}
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(100, 100, 100, 0.6);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(156, 163, 175, 0.9);
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+.grid-stack {
+  background: #fafad2;
+}
+
+.grid-stack-item-content {
+  text-align: center;
+}
+.grid-stack {
+  width: 100%;
+}

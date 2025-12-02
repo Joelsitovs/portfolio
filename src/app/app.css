@@ -1,0 +1,4 @@
+::ng-deep .grid-stack-item-content{
+  overflow: visible !important;
+  background: transparent !important;
+}
