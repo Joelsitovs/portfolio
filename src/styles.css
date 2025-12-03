@@ -1,6 +1,5 @@
 @import "tailwindcss";
 @import "gridstack/dist/gridstack.min.css";
-
 @custom-variant dark (&:where(.my-app-dark, .my-app-dark *));
 
 html,

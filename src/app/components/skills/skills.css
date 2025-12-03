@@ -1,0 +1,53 @@
+::ng-deep .p-carousel-viewport {
+  overflow: visible !important;
+}
+
+::ng-deep .p-carousel .p-carousel-content-container {
+  /* Evita que salga la barra */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+/* Chrome / Safari */
+::ng-deep .p-carousel .p-carousel-content-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Contenedor para posicionar bien las flechas */
+
+/* Flechas SIEMPRE visibles y centradas verticalmente */
+:host ::ng-deep .p-carousel-prev-button,
+:host ::ng-deep .p-carousel-next-button {
+  position: absolute;
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+
+  background: rgba(15, 23, 42, 0.85); /* slate-900 */
+  border-radius: 9999px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
+  color: #e5e7eb; /* slate-200 */
+  z-index: 50;
+}
+
+:host ::ng-deep .p-carousel-prev-button {
+  left: 15.75rem;
+}
+
+:host ::ng-deep .p-carousel-next-button {
+  right: 15.75rem;
+}
+
+@media (max-width: 767px) {
+  :host ::ng-deep .p-carousel-prev-button,
+  :host ::ng-deep .p-carousel-next-button {
+    display: none !important;
+    pointer-events: none !important;
+  }
+}
+/* Aunque estén "disabled", que no desaparezcan */
+:host ::ng-deep .p-carousel-prev-button.p-disabled,
+:host ::ng-deep .p-carousel-next-button.p-disabled {
+  opacity: 0.4 !important;
+  pointer-events: none;
+}
