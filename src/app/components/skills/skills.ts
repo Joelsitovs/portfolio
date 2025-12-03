@@ -11,13 +11,12 @@ import {GridStackOptions} from 'gridstack';
   styleUrl: './skills.css',
 })
 export class Skills {
-  constructor() {
-    console.log('Skills constructor');
-  }
   frontendGridOptions: GridStackOptions = {
-    column: 2,
-    margin: 5,
+    column: 3,
     cellHeight: 120,
     float: true,
+    resizable: {
+      handles: 'e,w'
+    }
   };
 }
