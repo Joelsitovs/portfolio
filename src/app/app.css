@@ -3,57 +3,10 @@
   background: transparent !important;
 }
 
-/*.list{
-  now
-}*/
-.word-rotator {
-  display: inline-block;
-  overflow: hidden;
-  height: 1.2em;
-}
-
-.word-rotator-inner {
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-content: start;
-  animation: rotateWords 6s infinite;
-}
-
-
-/* 4 palabras: 0%, -100%, -200%, -300% y vuelta */
-@keyframes rotateWords {
-  0% {
-    transform: translateY(0);
-  }
-  20% {
-    transform: translateY(0);
-  }
-
-  30% {
-    transform: translateY(-92%);
-  }
-  45% {
-    transform: translateY(-92%);
-  }
-
-  55% {
-    transform: translateY(-185%);
-  }
-  60% {
-    transform: translateY(-185%);
-  }
-
-
-  100% {
-    transform: translateY(0);
-  }
-}
-
-li{
+li {
   height: 1em !important;
-
 }
+
 .txt {
   animation: sd-desktop 7s ease-in-out infinite;
 }
@@ -63,10 +16,10 @@ li{
     transform: translate(0px, 0em);
   }
   50% {
-    transform: translate(0px, -1.3em);
+    transform: translate(0px, -1.32em);
   }
   75% {
-    transform: translate(0px, -2.6em);
+    transform: translate(0px, -2.65em);
   }
   100% {
     transform: translate(0px, 0em);
@@ -83,10 +36,10 @@ li{
       transform: translate(0px, 0em);
     }
     50% {
-      transform: translate(0px, -1.65em);
+      transform: translate(0px, -1.54em);
     }
     75% {
-      transform: translate(0px, -3.35em);
+      transform: translate(0px, -3.09em);
     }
     100% {
       transform: translate(0px, 0em);
