@@ -1,65 +1,83 @@
 <app-header/>
-  <section   #hero id="hero" class="h-screen overflow-hidden pt-12 md:pt-18 ">
-    <div class="max-w-7xl mx-auto h-full flex flex-col md:flex-row items-center gap-10 px-4">
-      <!-- Columna izquierda: texto -->
-      <div class="w-full md:w-1/2 space-y-4">
-        <p class="text-xs uppercase tracking-[0.25em] text-emerald-300/80">
-          Full-Stack Developer
-        </p>
+<section id="Home"
+         class="h-screen overflow-hidden pt-12 md:pt-18 ">
+  <div class="max-w-7xl mx-auto h-full flex flex-col md:flex-row items-center gap-10 px-4">
+    <!-- Columna izquierda: texto -->
+    <div class="w-full md:w-1/2 space-y-4">
+      <p class="text-sm font-medium text-slate-100">
+        Alan Torosina
+      </p>
 
-        <h1 class="text-3xl md:text-5xl font-semibold leading-tight">
-          Desarrollador full-stack con foco en backend y comunidades online.
+      <p class="text-base uppercase tracking-[0.25em] text-emerald-300/80">
+        {{ 'Full-Stack Developer' | translate }}
+      </p>
+      <div class="f
+      lex  gap-1">
+
+        <h1 class="text-3xl md:text-6xl font-semibold leading-tight">
+          Creo interfaces en Angular y desarrollo APIs en
+          <span class="inline-flex whitespace-nowrap overflow-hidden h-[5rem]">
+          <span class="word-rotator-inner">
+<span class="text-emerald-500">Go</span>
+<span class="text-slate-300">FastAPI</span>
+<span class="text-emerald-500">Node.js</span>
+
+    </span>
+          </span>
         </h1>
-
-        <p class="text-sm md:text-base text-slate-300/90 max-w-md">
-          Me especializo en la creación de sistemas fiables y escalables, con un fuerte enfoque en la
-          construcción y el impulso de comunidades en línea. Cuento con más de cinco años de experiencia
-          trabajando con JavaScript y su ecosistema.
-        </p>
-
-        <div class="flex flex-wrap gap-3 pt-2">
-          <a href="#contact"
-             class="px-4 py-2 rounded-full bg-emerald-500 hover:bg-emerald-400 text-sm font-medium text-slate-950 transition">
-            Saber mas
-          </a>
-          <a href="#projects"
-             class="px-4 py-2 rounded-full border border-slate-600 text-sm font-medium hover:bg-white/5 transition">
-            Ver proyectos
-          </a>
-        </div>
       </div>
 
-      <!-- Columna derecha: tarjeta / preview -->
-      <div class="w-full md:w-1/2 flex justify-center">
-        <div
-          class="w-64 h-64 md:w-72 md:h-72 rounded-3xl
+      <p class="text-sm md:text-base text-slate-300/90 max-w-md">
+        Me gusta construir sistemas eficientes, estables y bien integrados, trabajando también con infraestructura
+        ligera en Google Cloud, automatización y herramientas internas.<!---->
+      </p>
+
+      <div class="flex flex-wrap gap-3 pt-2">
+        <a href="#contact"
+           class="px-4 py-2 rounded-full bg-emerald-500 hover:bg-emerald-400 text-sm font-medium text-slate-950 transition">
+          Saber mas
+        </a>
+        <!--    <a href="#projects"
+               class="px-4 py-2 rounded-full border border-slate-600 text-sm font-medium hover:bg-white/5 transition">
+              Ver proyectos
+            </a>-->
+      </div>
+    </div>
+
+    <!-- Columna derecha: tarjeta / preview -->
+    <div class="w-full md:w-1/2 flex justify-center">
+      <div
+        class="w-64 h-72 md:w-72 md:h-72 rounded-3xl
                bg-slate-900/70 border border-slate-700/70
                shadow-xl shadow-emerald-500/10
                backdrop-blur-2xl p-4 flex flex-col justify-between">
-          <div class="space-y-1">
-            <p class="text-xs text-slate-400">Stack actual</p>
-            <p class="text-sm font-medium text-slate-100">
-              TypeScript · Node.js · NestJS · Angular · PostgreSQL
-            </p>
-          </div>
+        <div class="space-y-1">
+          <p class="text-xs text-slate-400">Stack actual</p>
+          <p class="text-sm font-medium text-slate-100">
+            TypeScript · Angular · TailwindCSS · Firestore · Go · GCP · Docker </p>
+        </div>
 
-          <div class="space-y-1">
-            <p class="text-xs text-slate-400">Qué aporto</p>
-            <p class="text-sm text-slate-200">
-              Diseño APIs robustas, automatizo procesos y cuido que la experiencia de usuario
-              sea fluida de punta a punta.
-            </p>
-          </div>
+        <div class="space-y-1">
+          <p class="text-xs text-slate-400">Qué aporto</p>
+          <p class="text-sm text-slate-200">
+            Construyo APIs estables y UIs rápidas.
+            Automatizo procesos y despliegues.
+            Me aseguro de que todo funcione de principio a fin.
+          </p>
+        </div>
 
-          <div class="flex items-center justify-between text-xs text-slate-400 pt-2 border-t border-slate-700/70 mt-2">
-            <span>+5 años con JavaScript</span>
-            <span class="text-emerald-300">Disponible para colaborar</span>
-          </div>
+        <div class="flex items-center justify-between text-xs text-slate-400 pt-2 border-t border-slate-700/70 mt-2">
+          <span class="text-emerald-300">Disponible</span>
         </div>
       </div>
     </div>
-  </section>
-  <div  class="h-4 w-full"></div>
+  </div>
+</section>
+<div class="h-4 w-full"></div>
+<section
+  id="Skills"
+  class=" h-screen overflow-hidden pt-12 md:pt-18 "
+>
   @defer (on viewport) {
     <app-skills/>
   } @placeholder {
@@ -67,3 +85,18 @@
       <p class="text-slate-500 text-sm">Zona de skills (placeholder)…</p>
     </section>
   }
+</section>
+
+<section
+  id="Experience"
+  class=" h-screen overflow-hidden pt-12 md:pt-18 "
+>
+  @defer (on viewport) {
+    <app-experience/>
+  } @placeholder {
+    <section class="min-h-[400px] flex items-center justify-center">
+      <p class="text-slate-500 text-sm">Zona de experiencia (placeholder)…</p>
+    </section>
+  }
+</section>
+

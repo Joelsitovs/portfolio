@@ -12,6 +12,7 @@ export interface Skill {
 interface SkillSlide {
   title: string;
   skills: Skill[];
+  tagline: string;
 }
 
 @Component({
@@ -35,9 +36,9 @@ export class Skills implements OnInit {
 
   private updateAutoplay(width: number) {
     if (width <= 767) {
-      this.autoplayInterval = 0;      // en móvil: nunca autoplay
+      this.autoplayInterval = 0;
     } else {
-      this.autoplayInterval = 5000;   // en desktop: autoplay
+      this.autoplayInterval = 5000;
     }
   }
 
@@ -57,10 +58,12 @@ export class Skills implements OnInit {
         {id: 'css3', name: 'CSS3', category: 'Frontend'},
         {id: 'javascript', name: 'JavaScript', category: 'Frontend'},
         {id: 'typescript', name: 'TypeScript', category: 'Frontend'},
-        {id: 'angular', name: 'Angular', category: 'Framework'},
         {id: 'tailwindcss', name: 'TailwindCSS', category: 'Styling'},
         {id: 'primeng', name: 'PrimeNG', category: 'UI'},
+        {id: 'angular', name: 'Angular', category: 'Framework'},
       ],
+      tagline: 'Construyo interfaces claras y rápidas.'
+
     },
     {
       title: 'Backend y Bases de Datos',
@@ -73,6 +76,8 @@ export class Skills implements OnInit {
         {id: 'postgres', name: 'PostgreSQL', category: 'Database'},
         {id: 'firestore', name: 'Firestore', category: 'Database'},
       ],
+      tagline: 'Creo APIs estables y eficientes.'
+
     },
     {
       title: 'DevOps y Herramientas',
@@ -80,21 +85,28 @@ export class Skills implements OnInit {
         {id: 'docker', name: 'Docker', category: 'Containers'},
         {id: 'linux', name: 'Linux', category: 'OS'},
         {id: 'git', name: 'Git', category: 'Version Control'},
+        {id: 'github', name: 'GitHub', category: 'Code Hosting'},
         {id: 'github-actions', name: 'GitHub Actions', category: 'CI/CD'},
         {id: 'nginx', name: 'Nginx', category: 'Web Server'},
         {id: 'jetbrains', name: 'JetBrains', category: 'IDE Suite'},
-
       ],
-    }
+      tagline: 'Automatizo y optimizo procesos.'
 
+    },
+    {
+      title: 'Cloud e Infraestructura',
+      skills: [
+        {id: 'gcp', name: 'Google Cloud', category: 'Cloud'},
+      ],
+      tagline: 'Configuro y mantengo servicios en la nube sin complicaciones.'
+
+    }
   ];
 
   responsiveOptions: any[] | undefined;
 
 
   ngOnInit() {
-
-
     this.responsiveOptions = [
       {
         breakpoint: '1400px',
@@ -169,15 +181,16 @@ export class Skills implements OnInit {
     this.layoutCache.set(slide, layout);
     return layout;
   }
+
   @ViewChild(Carousel) carousel!: Carousel;
 
   onCarouselMouseEnter() {
-    this.carousel.stopAutoplay();  // Para el autoplay
+    this.carousel.stopAutoplay();
     console.log('onCarouselMouseEnter');
   }
 
   onCarouselMouseLeave() {
-    this.carousel.startAutoplay(); // Lo vuelve a iniciar
+    this.carousel.startAutoplay();
     console.log('onCarouselMouseLeave');
   }
 

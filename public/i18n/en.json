@@ -1,7 +1,9 @@
 {
   "home": "Home",
   "about": "About me",
-  "skills": "Skills",
+  "Skills and Tools": "Skills and Tools",
   "experience": "Experience",
-  "contact": "Contact"
+  "contact": "Contact",
+  "Full-Stack Developer": "Full-Stack Developer"
+
 }

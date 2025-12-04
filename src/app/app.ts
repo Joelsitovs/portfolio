@@ -1,16 +1,18 @@
 import {
-  Component, inject
+  Component, inject, OnDestroy, OnInit
 } from '@angular/core';
 import {Header} from './components/header/header';
-import {TranslateService} from '@ngx-translate/core';
+import {TranslatePipe, TranslateService} from '@ngx-translate/core';
 import {Skills} from './components/skills/skills';
+import {Experience} from './components/experience/experience';
+
 @Component({
   selector: 'app-root',
-  imports: [Header, Skills],
+  imports: [Header, Skills, Experience, TranslatePipe],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
-export class App {
+export class App implements OnInit, OnDestroy {
   private translate = inject(TranslateService);
 
   constructor() {
@@ -20,4 +22,20 @@ export class App {
     this.translate.use(saved);
   }
 
+  techs = ['Go', 'FastAPI', 'Node.js'];
+  currentIndex = 0;
+
+  private intervalId?: number;
+
+  ngOnInit(): void {
+    this.intervalId = window.setInterval(() => {
+      this.currentIndex = (this.currentIndex + 1) % this.techs.length;
+    }, 2000); // cambia cada 2s
+  }
+
+  ngOnDestroy(): void {
+    if (this.intervalId) {
+      clearInterval(this.intervalId);
+    }
+  }
 }
