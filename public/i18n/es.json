@@ -4,5 +4,24 @@
   "Skills and Tools": "  Habilidades y Herramientas",
   "experience": "Experiencia",
   "contact": "Contacto",
-  "Full-Stack Developer": "Desarrollador Full-Stack"
+  "Full-Stack Developer": "Desarrollador Full-Stack",
+  "I create interfaces in Angular and develop APIs in": "Creo interfaces en Angular y desarrollo APIs en",
+  "I like to build efficient, stable and well-integrated systems": "Me gusta construir sistemas eficientes, estables y bien integrados, trabajando también con infraestructura ligera en Google Cloud, automatización y herramientas internas.",
+  "Learn more": "Saber más",
+  "currentStack": "Stack actual",
+  "whatIBring": "Qué aporto",
+  "whatIBringDesc": "Construyo APIs estables y UIs rápidas. Automatizo procesos y despliegues. Me aseguro de que todo funcione de principio a fin.",
+  "available": "Disponible",
+  "skills.frontend.title": "Frontend",
+  "skills.frontend.tagline": "Construyo interfaces claras y rápidas.",
+
+  "skills.backend.title": "Backend y Bases de Datos",
+  "skills.backend.tagline": "Creo APIs estables y eficientes.",
+
+  "skills.devops.title": "DevOps y Herramientas",
+  "skills.devops.tagline": "Automatizo y optimizo procesos.",
+
+  "skills.cloud.title": "Cloud e Infraestructura",
+  "skills.cloud.tagline": "Configuro y mantengo servicios en la nube sin complicaciones."
+
 }

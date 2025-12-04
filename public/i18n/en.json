@@ -4,6 +4,25 @@
   "Skills and Tools": "Skills and Tools",
   "experience": "Experience",
   "contact": "Contact",
-  "Full-Stack Developer": "Full-Stack Developer"
+  "Full-Stack Developer": "Full-Stack Developer",
+  "I create interfaces in Angular and develop APIs in": "I create interfaces in Angular and develop APIs in",
+  "I like to build efficient, stable and well-integrated systems": "I enjoy building efficient, stable, and well-integrated systems, also working with lightweight Google Cloud infrastructure, automation, and internal tools.",
+  "Learn more": "Learn more",
+  "currentStack": "Current Stack",
+  "whatIBring": "What I bring",
+  "whatIBringDesc": "I build stable APIs and fast UIs. I automate processes and deployments. I make sure everything works from start to finish.",
+  "available": "Available",
+  "skills.frontend.title": "Frontend",
+  "skills.frontend.tagline": "I build clear and fast interfaces.",
+
+  "skills.backend.title": "Backend and Databases",
+  "skills.backend.tagline": "I create stable and efficient APIs.",
+
+  "skills.devops.title": "DevOps and Tools",
+  "skills.devops.tagline": "I automate and optimize processes.",
+
+  "skills.cloud.title": "Cloud and Infrastructure",
+  "skills.cloud.tagline": "I configure and maintain cloud services without complications."
+
 
 }

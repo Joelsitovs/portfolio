@@ -1,7 +1,6 @@
 <div class="max-w-7xl mx-auto h-full flex flex-col items-center justify-center gap-10 px-4 overflow-hidden">
   <p class="text-md uppercase tracking-[0.25em] text-emerald-300/80">
-    Skills & Tools
-  </p>
+    {{ 'Skills and Tools'| translate }} </p>
   <div class="c-slider w-full">
     <p-carousel
       [value]="skillSlides"
@@ -29,7 +28,7 @@
                  rounded-2xl
                  p-2 ">
               <span class="text-md font-medium text-slate-100 tracking-wide">
-            {{ slide.title }}
+            {{ slide.title | translate }}
           </span>
             </div>
             <div
@@ -1913,7 +1912,7 @@
               class="   border-t border-slate-700/70 ">
             </div>
             <p class=" text-xs text-slate-400 text-center">
-              {{ slide.tagline }}
+              {{ slide.tagline |translate }}
             </p>
           </div>
         </div>

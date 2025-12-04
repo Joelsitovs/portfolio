@@ -4,18 +4,18 @@
   <div class="max-w-7xl mx-auto h-full flex flex-col md:flex-row items-center gap-10 px-4">
     <!-- Columna izquierda: texto -->
     <div class="w-full md:w-1/2 space-y-4">
-      <p class="text-sm font-medium text-slate-100">
+      <p class="text-base font-medium text-slate-100 md:pt-0 pt-10">
         Alan Torosina
       </p>
 
-      <p class="text-base uppercase tracking-[0.25em] text-emerald-300/80">
+      <p class="text-xl uppercase tracking-[0.25em] text-emerald-300/80">
         {{ 'Full-Stack Developer' | translate }}
       </p>
       <div class="f
       lex  gap-1">
 
         <h1 class="text-4xl md:text-6xl font-semibold leading-tight overflow-hidden ">
-          Creo interfaces en Angular y desarrollo APIs en
+          {{ 'I create interfaces in Angular and develop APIs in'| translate }}
           <span class="inline-flex overflow-hidden  ">
           <ul class="flex  flex-col gap-5  txt h-10   lg:h-20   ">
             <li class="text-emerald-500">Go</li>
@@ -24,28 +24,18 @@
           </ul>
           </span>
         </h1>
-
-
-        <!--<span class="inline-flex whitespace-nowrap overflow-hidden h-8 sm:h-4 md:h-16 lg:h-20">
-        <span class="word-rotator-inner">
-<span class="text-emerald-500">Go</span>
-<span class="text-slate-300">FastAPI</span>
-<span class="text-emerald-500">Node.js</span>
-
-  </span>
-        </span>-->
       </div>
 
       <p class="text-sm md:text-base text-slate-300/90 max-w-md">
-        Me gusta construir sistemas eficientes, estables y bien integrados, trabajando también con infraestructura
-        ligera en Google Cloud, automatización y herramientas internas.<!---->
+        {{
+          'I like to build efficient, stable and well-integrated systems'| translate
+        }}
       </p>
 
       <div class="flex flex-wrap gap-3 pt-2">
         <a href="#contact"
            class="px-4 py-2 rounded-full bg-emerald-500 hover:bg-emerald-400 text-sm font-medium text-slate-950 transition">
-          Saber mas
-        </a>
+          {{ 'Learn more' |translate }} </a>
         <!--    <a href="#projects"
                class="px-4 py-2 rounded-full border border-slate-600 text-sm font-medium hover:bg-white/5 transition">
               Ver proyectos
@@ -53,30 +43,31 @@
       </div>
     </div>
 
-    <!-- Columna derecha: tarjeta / preview -->
     <div class="w-full md:w-1/2 flex justify-center">
       <div
-        class="w-64 h-72 md:w-72 md:h-72 rounded-3xl
-               bg-slate-900/70 border border-slate-700/70
-               shadow-xl shadow-emerald-500/10
-               backdrop-blur-2xl p-4 flex flex-col justify-between">
+        class="w-full max-w-xs md:max-w-sm
+         min-h-[260px] md:min-h-[280px]
+         rounded-3xl
+         bg-slate-900/70 border border-slate-700/70
+         shadow-xl shadow-emerald-500/10
+         backdrop-blur-2xl
+         p-5 flex flex-col justify-between"
+      >
         <div class="space-y-1">
-          <p class="text-xs text-slate-400">Stack actual</p>
+          <p class="text-xs text-slate-400">{{ 'currentStack'|translate }}</p>
           <p class="text-sm font-medium text-slate-100">
             TypeScript · Angular · TailwindCSS · Firestore · Go · GCP · Docker </p>
         </div>
-
         <div class="space-y-1">
-          <p class="text-xs text-slate-400">Qué aporto</p>
+          <p class="text-xs text-slate-400">{{ 'whatIBring'|translate }}</p>
           <p class="text-sm text-slate-200">
-            Construyo APIs estables y UIs rápidas.
-            Automatizo procesos y despliegues.
-            Me aseguro de que todo funcione de principio a fin.
+            {{'whatIBringDesc'|translate
+            }}
           </p>
         </div>
 
         <div class="flex items-center justify-between text-xs text-slate-400 pt-2 border-t border-slate-700/70 mt-2">
-          <span class="text-emerald-300">Disponible</span>
+          <span class="text-emerald-300">{{ 'available' |translate }}</span>
         </div>
       </div>
     </div>
@@ -96,6 +87,7 @@
   }
 </section>
 
+<!--
 <section
   id="Experience"
   class=" h-screen overflow-hidden pt-12 md:pt-18 "
@@ -108,4 +100,5 @@
     </section>
   }
 </section>
+-->
 

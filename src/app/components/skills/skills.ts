@@ -2,6 +2,7 @@ import {Component, HostListener, OnInit, ViewChild,} from '@angular/core';
 import {GridstackComponent, GridstackItemComponent} from 'gridstack/dist/angular';
 import {GridStackOptions, GridStackWidget} from 'gridstack';
 import {Carousel, CarouselModule} from 'primeng/carousel';
+import {TranslatePipe} from '@ngx-translate/core';
 
 export interface Skill {
   id?: string;
@@ -21,6 +22,7 @@ interface SkillSlide {
     GridstackComponent,
     GridstackItemComponent,
     CarouselModule,
+    TranslatePipe,
   ],
   templateUrl: './skills.html',
   styleUrl: './skills.css',
@@ -52,7 +54,7 @@ export class Skills implements OnInit {
   };
   skillSlides: SkillSlide[] = [
     {
-      title: 'Frontend',
+      title: 'skills.frontend.title',
       skills: [
         {id: 'html5', name: 'HTML5', category: 'Frontend'},
         {id: 'css3', name: 'CSS3', category: 'Frontend'},
@@ -62,11 +64,11 @@ export class Skills implements OnInit {
         {id: 'primeng', name: 'PrimeNG', category: 'UI'},
         {id: 'angular', name: 'Angular', category: 'Framework'},
       ],
-      tagline: 'Construyo interfaces claras y rápidas.'
+      tagline: 'skills.frontend.tagline'
 
     },
     {
-      title: 'Backend y Bases de Datos',
+      title: 'skills.backend.title',
       skills: [
         {id: 'go', name: 'Go'},
         {id: 'node', name: 'Node.js', category: 'Backend'},
@@ -76,11 +78,11 @@ export class Skills implements OnInit {
         {id: 'postgres', name: 'PostgreSQL', category: 'Database'},
         {id: 'firestore', name: 'Firestore', category: 'Database'},
       ],
-      tagline: 'Creo APIs estables y eficientes.'
+      tagline: 'skills.backend.tagline'
 
     },
     {
-      title: 'DevOps y Herramientas',
+      title: 'skills.devops.title',
       skills: [
         {id: 'docker', name: 'Docker', category: 'Containers'},
         {id: 'linux', name: 'Linux', category: 'OS'},
@@ -90,15 +92,15 @@ export class Skills implements OnInit {
         {id: 'nginx', name: 'Nginx', category: 'Web Server'},
         {id: 'jetbrains', name: 'JetBrains', category: 'IDE Suite'},
       ],
-      tagline: 'Automatizo y optimizo procesos.'
+      tagline: 'skills.devops.tagline'
 
     },
     {
-      title: 'Cloud e Infraestructura',
+      title: 'skills.cloud.title',
       skills: [
         {id: 'gcp', name: 'Google Cloud', category: 'Cloud'},
       ],
-      tagline: 'Configuro y mantengo servicios en la nube sin complicaciones.'
+      tagline: 'skills.cloud.tagline'
 
     }
   ];
