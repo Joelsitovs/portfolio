@@ -21,20 +21,24 @@ export class Header implements OnInit {
   private translate = inject(TranslateService);
   private scroll = inject(ScrollService);
 
-  goToSkills() {
+  goToSkills(event: Event) {
+    event.preventDefault();
     this.scroll.scrollTo('Skills');
   }
 
-  goToHome() {
+  goToHome(event: Event) {
+    event.preventDefault();
     this.scroll.scrollTo('Home');
   }
 
-  goToExperience() {
+  goToExperience(event: Event) {
+    event.preventDefault();
     this.scroll.scrollTo('Experience');
   }
 
   ngOnInit(): void {
-    this.currentLang = (localStorage.getItem('lang') as Lang) || 'es';
+    const saved = localStorage.getItem('lang') as Lang;
+    this.currentLang = saved ?? 'es';
   }
 
   toggleLanguage(): void {

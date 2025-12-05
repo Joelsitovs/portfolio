@@ -22,7 +22,14 @@
               {
                 "glob": "**/*",
                 "input": "public"
-              }
+              },
+              {
+                "glob": "**/*",
+                "input": "src/assets",
+                "output": "assets"
+              },
+              "src/robots.txt",
+              "src/sitemap.xml"
             ],
             "styles": [
               "src/styles.css"
@@ -31,9 +38,10 @@
           "configurations": {
             "production": {
               "optimization": true,
-              "sourceMap": false,
               "extractLicenses": true,
               "outputHashing": "all",
+              "namedChunks": false,
+              "sourceMap": false,
               "budgets": [
                 {
                   "type": "initial",
@@ -81,8 +89,11 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public"
-              }
+                "input": "src/assets",
+                "output": "assets"
+              },
+              "src/robots.txt",
+              "src/sitemap.xml"
             ],
             "styles": [
               "src/styles.css"

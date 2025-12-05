@@ -1,8 +1,8 @@
 import {Component, HostListener, OnInit, ViewChild,} from '@angular/core';
-import {GridstackComponent, GridstackItemComponent} from 'gridstack/dist/angular';
 import {GridStackOptions, GridStackWidget} from 'gridstack';
 import {Carousel, CarouselModule} from 'primeng/carousel';
 import {TranslatePipe} from '@ngx-translate/core';
+import {NgClass} from '@angular/common';
 
 export interface Skill {
   id?: string;
@@ -19,22 +19,41 @@ interface SkillSlide {
 @Component({
   selector: 'app-skills',
   imports: [
-    GridstackComponent,
-    GridstackItemComponent,
     CarouselModule,
     TranslatePipe,
+    NgClass,
   ],
   templateUrl: './skills.html',
   styleUrl: './skills.css',
 })
 export class Skills implements OnInit {
   autoplayInterval: number = 3000;
+  constructor() {
+    Carousel.prototype.onTouchMove = function (event: TouchEvent) {
+      const touch = event.touches[0];
+      const deltaX = touch.clientX - this.startPos.x;
+      const deltaY = touch.clientY - this.startPos.y;
+
+      if (Math.abs(deltaX) > Math.abs(deltaY)) {
+        console.log('Horizontal move');
+        if (event.cancelable) {
+          event.preventDefault();
+        }
+      } else {
+        console.log('Vertical move');
+      }
+    };
+  }
 
 
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
-    this.updateAutoplay(event.target.innerWidth);
+    const width = event.target.innerWidth;
+    this.updateAutoplay(width);
+    this.updateGridColumns(width);
+    this.layoutCache = new WeakMap();
   }
+
 
   private updateAutoplay(width: number) {
     if (width <= 767) {
@@ -42,6 +61,23 @@ export class Skills implements OnInit {
     } else {
       this.autoplayInterval = 5000;
     }
+  }
+
+  private updateGridColumns(width: number) {
+    let cols: number;
+
+    if (width <= 500) {
+      cols = 1;
+    } else if (width <= 767) {
+      cols = 2;
+    } else {
+      cols = 3;
+    }
+
+    this.frontendGridOptions = {
+      ...this.frontendGridOptions,
+      column: cols,
+    };
   }
 
   frontendGridOptions: GridStackOptions = {
@@ -109,30 +145,35 @@ export class Skills implements OnInit {
 
 
   ngOnInit() {
+    const width = window.innerWidth;
     this.responsiveOptions = [
       {
         breakpoint: '1400px',
         numVisible: 2,
-        numScroll: 1
+        numScroll: 1,
+
       },
       {
         breakpoint: '1199px',
-        numVisible: 3,
+        numVisible: 2,
         numScroll: 1
       },
       {
         breakpoint: '767px',
-        numVisible: 2,
-        numScroll: 1
+        numVisible: 1,
+        numScroll: 1,
+        autoplayInterval: false,
       },
       {
         breakpoint: '575px',
         numVisible: 1,
         numScroll: 1,
+        autoplayInterval: false,
 
       }
     ]
-    this.updateAutoplay(window.innerWidth);
+    this.updateAutoplay(width);
+    this.updateGridColumns(width);
   }
 
   private layoutCache = new WeakMap<SkillSlide, GridStackWidget[]>();
@@ -188,12 +229,47 @@ export class Skills implements OnInit {
 
   onCarouselMouseEnter() {
     this.carousel.stopAutoplay();
-    console.log('onCarouselMouseEnter');
   }
 
   onCarouselMouseLeave() {
     this.carousel.startAutoplay();
-    console.log('onCarouselMouseLeave');
   }
+/*  Carousel.prototype.onTouchMove = function (event: TouchEvent) {
+    const touch = event.touches[0];
+    const deltaX = touch.clientX - this.startPos.x;
+    const deltaY = touch.clientY - this.startPos.y;
 
+    if (Math.abs(deltaX) > Math.abs(deltaY)) {
+      console.log('Horizontal move');
+      if (event.cancelable) {
+        event.preventDefault();
+      }
+    } else {
+      console.log('Vertical move');
+    }
+  };*/
+
+  getBalancedRows(skills: Skill[], cols: number) {
+    const rows: Skill[][] = [];
+
+    for (let i = 0; i < skills.length; i += cols) {
+      rows.push(skills.slice(i, i + cols));
+    }
+
+    // Si la última fila tiene solo 1 item, la mezclamos con la anterior
+    const last = rows[rows.length - 1];
+    if (last.length === 1 && rows.length > 1) {
+      rows[rows.length - 2].push(...last); // fusiona el elemento con la fila anterior
+      rows.pop(); // elimina la fila sobrante
+    }
+
+    return rows;
+  }
+  getCols(): number {
+    const width = window.innerWidth;
+    if (width >= 1280) return 4;
+    if (width >= 1024) return 3;
+    if (width >= 640) return 2;
+    return 1;
+  }
 }
