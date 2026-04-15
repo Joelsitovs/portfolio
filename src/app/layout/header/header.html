@@ -1,0 +1,132 @@
+<header class="fixed top-0 left-0 w-full z-50 pointer-events-none">
+  <div class="md:fixed md:top-4 md:left-1/2 md:transform md:-translate-x-1/2 w-full md:w-auto pointer-events-auto">
+    <nav (mousemove)="onMouseMove($event)"
+         [style.--x.px]="x"
+         [style.--y.px]="y"
+         class="relative mx-auto max-w-5xl md:rounded-2xl px-4 md:px-6 py-2.5 bg-[#0a0a0a] border border-[#1f1f1f] shadow-xl shadow-black/5 backdrop-blur-3xl text-[#d4d4d4] overflow-hidden group/card">
+
+      <!-- Spotlight Overlay -->
+      <div
+        class="pointer-events-none absolute -inset-px opacity-0 group-hover/card:opacity-100 transition duration-300 z-0"
+        style="background: radial-gradient(400px circle at var(--x) var(--y), rgba(16, 185, 129, 0.15), transparent 40%);"></div>
+
+      <!-- Mobile Bar -->
+      <div class="relative z-10 flex justify-between items-center md:hidden px-2">
+        <a href="/" class="text-white font-bold text-xl tracking-tight"></a>
+        <button (click)="toggleMenu()" aria-label="Abrir menú" class="text-[#d4d4d4] hover:text-white transition-colors p-1 relative z-50">
+          @if (!menuOpen) {
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          } @else {
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          }
+        </button>
+      </div>
+
+      <!-- Desktop Menu -->
+      <div class="relative z-10 hidden md:flex md:items-center gap-2 text-xs font-medium">
+        <a href="#home" (click)="scrollToSection('home', $event)"
+           class="inline-flex items-center gap-2 px-3 py-2 rounded-md text-zinc-400 border border-transparent hover:border-white/10 hover:bg-white/5 hover:text-white transition-all duration-300 cursor-pointer">
+          {{ 'NAV.HOME' | translate }}
+        </a>
+        <a href="#projects" (click)="scrollToSection('projects', $event)"
+           class="inline-flex items-center gap-2 px-3 py-2 rounded-md text-zinc-400 border border-transparent hover:border-white/10 hover:bg-white/5 hover:text-white transition-all duration-300 cursor-pointer">
+          {{ 'NAV.PROJECTS' | translate }}
+        </a>
+        <a href="#about" (click)="scrollToSection('about', $event)"
+           class="inline-flex items-center gap-2 px-3 py-2 rounded-md text-zinc-400 border border-transparent hover:border-white/10 hover:bg-white/5 hover:text-white transition-all duration-300 cursor-pointer">
+          {{ 'NAV.ABOUT' | translate }}
+        </a>
+        <a href="#skills" (click)="scrollToSection('skills', $event)"
+           class="inline-flex items-center gap-2 px-3 py-2 rounded-md text-zinc-400 border border-transparent hover:border-white/10 hover:bg-white/5 hover:text-white transition-all duration-300 cursor-pointer">
+          {{ 'NAV.SKILLS' | translate }}
+        </a>
+        <a href="#experience" (click)="scrollToSection('experience', $event)"
+           class="inline-flex items-center gap-2 px-3 py-2 rounded-md text-zinc-400 border border-transparent hover:border-white/10 hover:bg-white/5 hover:text-white transition-all duration-300 cursor-pointer">
+          {{ 'NAV.EXPERIENCE' | translate }}
+        </a>
+        <a href="#contact" (click)="scrollToSection('contact', $event)"
+           class="inline-flex items-center gap-2 px-3 py-2 rounded-md text-zinc-400 border border-transparent hover:border-white/10 hover:bg-white/5 hover:text-white transition-all duration-300 cursor-pointer">
+          {{ 'NAV.CONTACT' | translate }}
+        </a>
+
+        <div class="w-px h-4 bg-[#262626] mx-1"></div>
+
+        <!-- Language Switcher -->
+        <div class="flex justify-center md:ml-3">
+          <div
+            (click)="toggleLanguage()"
+            class="relative w-18 h-7 flex items-center cursor-pointer bg-black/40 rounded-full border border-[#161616] shadow-inner overflow-hidden group select-none"
+          >
+            <!-- Sliding Pill -->
+            <div
+              class="absolute h-5.5 w-8 bg-[#1f1f1f] rounded-full shadow-sm transition-all duration-300"
+              [ngClass]="ts.currentLang() === 'en' ? 'left-0.5' : 'left-[calc(100%-2rem-0.125rem)]'"
+            ></div>
+
+            <!-- Labels -->
+            <div class="relative w-full flex justify-around items-center h-full px-0.5">
+  <span
+    class="z-10 text-[10px] font-bold transition-colors w-1/2 text-center"
+    [ngClass]="ts.currentLang() === 'en'
+      ? 'text-white'
+      : 'text-zinc-300/70 group-hover:text-zinc-200'"
+  >
+    EN
+  </span>
+
+              <span
+                class="z-10 text-[10px] font-bold transition-colors w-1/2 text-center"
+                [ngClass]="ts.currentLang() === 'es'
+      ? 'text-white'
+      : 'text-zinc-300/70 group-hover:text-zinc-200'"
+              >
+    ES
+  </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Mobile Menu Overlay -->
+  @if (menuOpen) {
+    <div class="fixed inset-0 bg-black/95 backdrop-blur-xl z-40 flex flex-col items-center justify-center space-y-8 animate-fade-in md:hidden pointer-events-auto">
+      <!-- Close Button -->
+      <button (click)="toggleMenu()" class="absolute top-6 right-6 text-zinc-400 hover:text-white transition-colors p-2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <nav class="flex flex-col items-center gap-6 text-2xl font-bold">
+        <a href="#home" (click)="scrollToSection('home', $event)" class="text-zinc-400 hover:text-white transition-colors">{{ 'NAV.HOME' | translate }}</a>
+        <a href="#projects" (click)="scrollToSection('projects', $event)" class="text-zinc-400 hover:text-white transition-colors">{{ 'NAV.PROJECTS' | translate }}</a>
+        <a href="#about" (click)="scrollToSection('about', $event)" class="text-zinc-400 hover:text-white transition-colors">{{ 'NAV.ABOUT' | translate }}</a>
+        <a href="#skills" (click)="scrollToSection('skills', $event)" class="text-zinc-400 hover:text-white transition-colors">{{ 'NAV.SKILLS' | translate }}</a>
+        <a href="#experience" (click)="scrollToSection('experience', $event)" class="text-zinc-400 hover:text-white transition-colors">{{ 'NAV.EXPERIENCE' | translate }}</a>
+        <a href="#contact" (click)="scrollToSection('contact', $event)" class="text-zinc-400 hover:text-white transition-colors">{{ 'NAV.CONTACT' | translate }}</a>
+      </nav>
+
+      <div class="w-16 h-px bg-zinc-800"></div>
+
+      <!-- Mobile Language Switcher -->
+      <div class="flex gap-4">
+        <button (click)="ts.setLang('en')" [class.text-white]="ts.currentLang() === 'en'" [class.text-zinc-500]="ts.currentLang() !== 'en'" class="text-lg font-bold transition-colors ">EN</button>
+        <div class="w-px h-6 bg-zinc-800"></div>
+        <button (click)="ts.setLang('es')" [class.text-white]="ts.currentLang() === 'es'" [class.text-zinc-500]="ts.currentLang() !== 'es'" class="text-lg font-bold transition-colors">ES</button>
+      </div>
+    </div>
+  }
+</header>

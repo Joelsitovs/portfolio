@@ -1,0 +1,11 @@
+:host {
+  display: block;
+}
+
+
+
+h1 {
+  background: linear-gradient(to bottom right, #ffffff 50%, #71717a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

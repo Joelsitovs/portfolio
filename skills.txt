@@ -1,0 +1,27 @@
+SKILLS & TECHNOLOGIES
+══════════════════════════════════════
+
+Lenguajes
+─────────────────────────────────────
+Java · TypeScript · JavaScript · Go · Python · PHP · SQL
+
+Frameworks & Librerías
+─────────────────────────────────────
+Spring Boot · Spring · Angular · RxJS · Laravel · .NET
+
+Frontend
+─────────────────────────────────────
+HTML5 · CSS3 · Single Page Applications (SPA) · Responsive Design
+
+Backend & Arquitectura
+─────────────────────────────────────
+Desarrollo de APIs REST · Microservicios · Autenticación
+Clean Architecture · Principios SOLID
+
+Cloud & DevOps
+─────────────────────────────────────
+Google Cloud Platform (GCP) · Docker · CI/CD · Firebase · BigQuery
+
+Herramientas & Entorno
+─────────────────────────────────────
+Git · GitHub · Git Workflows · Linux · Bash · Postman · Jira

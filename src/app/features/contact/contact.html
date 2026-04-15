@@ -1,0 +1,222 @@
+<section class="flex flex-col items-center justify-center py-24 px-6 text-[#d4d4d4]" id="contact">
+
+  <div class="max-w-6xl w-full">
+
+    <div class="flex flex-col lg:flex-row gap-12 lg:gap-24">
+
+      <!-- Left Column: Info -->
+      <div class="lg:w-5/12 space-y-10">
+
+        <div class="space-y-4">
+          <h2 class="text-4xl md:text-5xl font-bold text-white tracking-tight"
+              [innerHTML]="'CONTACT.TITLE' | translate"></h2>
+          <p class="text-zinc-400 text-lg leading-relaxed">
+            {{ 'CONTACT.SUBTITLE' | translate }}
+          </p>
+        </div>
+
+        <!-- Status Pill -->
+        <div
+          class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20">
+          <span class="relative flex h-2.5 w-2.5">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+          </span>
+          <span
+            class="text-xs font-semibold text-emerald-400 uppercase tracking-wide">{{ 'CONTACT.AVAILABLE' | translate }}</span>
+        </div>
+
+        <div class="space-y-8">
+
+          <!-- Email -->
+          <div class="flex gap-4 group">
+            <div
+              class="w-12 h-12 rounded-2xl bg-[#111] border border-[#222] flex items-center justify-center group-hover:border-emerald-500/30 transition-colors">
+              <svg class="w-5 h-5 text-zinc-400 group-hover:text-emerald-400 transition-colors" fill="none"
+                   viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+            </div>
+            <div>
+              <h4 class="text-sm font-semibold text-zinc-300">{{ 'CONTACT.EMAIL' | translate }}</h4>
+              <a href="mailto:alanjoelt43@gmail.com"
+                 class="text-base text-white hover:text-emerald-400 transition-colors">alanjoelt43@gmail.com</a>
+              <p class="text-xs text-zinc-500 mt-1">{{ 'CONTACT.RESPONSE_TIME' | translate }}</p>
+            </div>
+          </div>
+
+          <!-- Location -->
+          <div class="flex gap-4 group">
+            <div
+              class="w-12 h-12 rounded-2xl bg-[#111] border border-[#222] flex items-center justify-center group-hover:border-emerald-500/30 transition-colors">
+              <svg class="w-5 h-5 text-zinc-400 group-hover:text-emerald-400 transition-colors" fill="none"
+                   viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+              </svg>
+            </div>
+            <div>
+              <h4 class="text-sm font-semibold text-zinc-300">{{ 'CONTACT.LOCATION.TITLE' | translate }}</h4>
+              <p class="text-base text-white">{{ 'CONTACT.LOCATION.VALUE' | translate }}</p>
+              <p class="text-xs text-zinc-500 mt-1">{{ 'CONTACT.LOCATION.SUB' | translate }}</p>
+            </div>
+          </div>
+
+          <!-- Socials -->
+          <div class="flex gap-4 group">
+            <div
+              class="w-12 h-12 rounded-2xl bg-[#111] border border-[#222] flex items-center justify-center group-hover:border-emerald-500/30 transition-colors">
+              <svg class="w-5 h-5 text-zinc-400 group-hover:text-emerald-400 transition-colors" fill="none"
+                   viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                      d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/>
+              </svg>
+            </div>
+            <div>
+              <h4 class="text-sm font-semibold text-zinc-300">{{ 'CONTACT.SOCIALS' | translate }}</h4>
+              <div class="flex gap-4 mt-1">
+                <a href="https://github.com/Joelsitovs" target="_blank"
+                   class="text-sm text-white hover:text-emerald-400 underline decoration-zinc-600 underline-offset-4 hover:decoration-emerald-400 transition-all">GitHub</a>
+                <a href="https://www.linkedin.com/in/joelsitovs/" target="_blank"
+                   class="text-sm text-white hover:text-emerald-400 underline decoration-zinc-600 underline-offset-4 hover:decoration-emerald-400 transition-all">LinkedIn</a>
+                <a
+                  href="/CV-Alan-G.pdf"
+                  target="_blank"
+                  class="text-sm text-white hover:text-emerald-400 underline decoration-zinc-600 underline-offset-4 hover:decoration-emerald-400 transition-all">CV</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Right Column: Form -->
+      <div class="lg:w-7/12">
+        <div class="animated-border-box p-px rounded-3xl overflow-hidden relative group/border">
+          <div
+            class="absolute inset-0 bg-linear-to-r from-transparent via-emerald-500/40 to-transparent opacity-0 group-hover/border:opacity-100 transition-opacity duration-500"></div>
+
+          <div class="bg-[#0a0a0a] rounded-[23px] h-full w-full p-6 md:p-10 relative z-10 overflow-hidden">
+
+            <!-- Background Glow -->
+            <div
+              class="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-transparent via-emerald-500/50 to-transparent opacity-50"></div>
+
+            <h3 class="text-2xl font-bold text-white mb-2">{{ 'CONTACT.FORM.TITLE' | translate }}</h3>
+            <p class="text-zinc-500 text-sm mb-8">{{ 'CONTACT.FORM.RESPONSE' | translate }}</p>
+
+            @if (successMessage) {
+              <div
+                class="mb-6 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm flex items-center gap-3 animate-fade-in">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+                {{ successMessage }}
+              </div>
+            }
+
+            @if (errorMessage) {
+              <div
+                class="mb-6 p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-sm flex items-center gap-3 animate-fade-in">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="8" x2="12" y2="12"></line>
+                  <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                </svg>
+                {{ errorMessage }}
+              </div>
+            }
+
+            <form (ngSubmit)="onSubmit()" #contactForm="ngForm" class="space-y-6">
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="space-y-2">
+                  <label for="name"
+                         class="text-xs font-medium text-zinc-400 uppercase tracking-wider">{{ 'CONTACT.FORM.NAME' | translate }}</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    [(ngModel)]="formData.name"
+                    [placeholder]="'CONTACT.FORM.NAME_PLACEHOLDER' | translate"
+                    required
+                    class="w-full bg-[#111] border border-[#222] rounded-xl px-4 py-3 text-zinc-200 placeholder-zinc-600 focus:outline-none focus:border-emerald-500/50 focus:bg-[#161616] transition-all"
+                  >
+                </div>
+                <div class="space-y-2">
+                  <label for="email"
+                         class="text-xs font-medium text-zinc-400 uppercase tracking-wider">{{ 'CONTACT.FORM.EMAIL' | translate }}</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    [(ngModel)]="formData.email"
+                    [placeholder]="'CONTACT.FORM.EMAIL_PLACEHOLDER' | translate"
+                    required
+                    class="w-full bg-[#111] border border-[#222] rounded-xl px-4 py-3 text-zinc-200 placeholder-zinc-600 focus:outline-none focus:border-emerald-500/50 focus:bg-[#161616] transition-all"
+                  >
+                </div>
+              </div>
+
+              <div class="space-y-2">
+                <label for="subject"
+                       class="text-xs font-medium text-zinc-400 uppercase tracking-wider">{{ 'CONTACT.FORM.SUBJECT' | translate }}</label>
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  [(ngModel)]="formData.subject"
+                  [placeholder]="'CONTACT.FORM.SUBJECT_PLACEHOLDER' | translate"
+                  required
+                  class="w-full bg-[#111] border border-[#222] rounded-xl px-4 py-3 text-zinc-200 placeholder-zinc-600 focus:outline-none focus:border-emerald-500/50 focus:bg-[#161616] transition-all"
+                >
+              </div>
+
+              <div class="space-y-2">
+                <label for="message"
+                       class="text-xs font-medium text-zinc-400 uppercase tracking-wider">{{ 'CONTACT.FORM.MESSAGE' | translate }}</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  [(ngModel)]="formData.message"
+                  rows="4"
+                  [placeholder]="'CONTACT.FORM.MESSAGE_PLACEHOLDER' | translate"
+                  required
+                  class="w-full bg-[#111] border border-[#222] rounded-xl px-4 py-3 text-zinc-200 placeholder-zinc-600 focus:outline-none focus:border-emerald-500/50 focus:bg-[#161616] transition-all resize-none"
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                [disabled]="loading"
+                class="w-full py-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-black font-bold text-sm uppercase tracking-wide transition-all transform hover:scale-[1.01] shadow-lg shadow-emerald-500/20 disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:scale-100 flex items-center justify-center gap-2"
+              >
+                @if (loading) {
+                  <svg class="animate-spin h-5 w-5 text-black" xmlns="http://www.w3.org/2000/svg" fill="none"
+                       viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor"
+                          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                  </svg>
+                  <span>Enviando...</span>
+                } @else {
+                  <span>{{ 'CONTACT.FORM.SUBMIT' | translate }}</span>
+                }
+              </button>
+
+            </form>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>

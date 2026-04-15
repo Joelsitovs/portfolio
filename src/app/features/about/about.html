@@ -1,0 +1,92 @@
+<section class="flex items-center justify-center pt-18 md:pt-32 scroll-mt-20 text-[#d4d4d4] px-6" id="home">
+  <div class="max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 gap-16 items-stretch">
+
+    <div class="flex flex-col justify-center space-y-10 animate-fade-in" id="about">
+      <div class="space-y-4">
+        <div class="flex flex-col gap-1">
+          <h1 class="text-6xl font-extrabold text-white tracking-tighter">
+            Alan Torosina
+          </h1>
+          <h2 class="text-emerald-400 font-mono text-lg tracking-widest uppercase">
+            {{ 'ABOUT.ROLE' | translate }}
+          </h2>
+        </div>
+
+        <div class="flex flex-col gap-4 border-l-2 border-emerald-500/30 pl-6 py-1">
+          <p class="text-xl text-zinc-300 leading-snug max-w-lg" [innerHTML]="'ABOUT.DESC_1' | translate">
+          </p>
+        </div>
+      </div>
+
+      <div class="space-y-6 text-base md:text-lg leading-relaxed text-zinc-400 max-w-xl">
+        <p [innerHTML]="'ABOUT.DESC_2' | translate">
+        </p>
+
+        <p [innerHTML]="'ABOUT.DESC_3' | translate">
+        </p>
+      </div>
+    </div>
+
+    <div class="relative group h-full">
+      <div class="absolute -inset-1 bg-linear-to-r from-emerald-600/20 to-cyan-600/20 rounded-4xl blur-xl opacity-0 group-hover:opacity-100 transition duration-700"></div>
+
+      <div (mousemove)="onMouseMove($event)"
+           [style.--x]="x + 'px'"
+           [style.--y]="y + 'px'"
+           class="relative h-full bg-[#0a0a0a] border border-white/10 rounded-4xl p-8 md:p-10 shadow-2xl overflow-hidden group/card flex flex-col justify-between">
+
+        <div class="pointer-events-none absolute -inset-px opacity-0 group-hover/card:opacity-100 transition duration-300 z-0"
+             style="background: radial-gradient(400px circle at var(--x) var(--y), rgba(16, 185, 129, 0.15), transparent 40%);"></div>
+
+        <div class="absolute -top-24 -right-24 w-48 h-48 bg-emerald-500/5 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="space-y-12 relative z-10 flex-grow flex flex-col justify-center">
+          <div>
+            <h3 class="text-xs font-bold text-zinc-300 uppercase tracking-[0.3em] mb-6">{{ 'ABOUT.EXPERTISE' | translate }}</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1.5 bg-white/3 border border-white/10 rounded-lg text-xs text-zinc-400 hover:bg-emerald-500/10 hover:border-emerald-500/40 hover:text-white transition-all duration-300 cursor-default">TypeScript</span>
+              <span class="px-3 py-1.5 bg-white/3 border border-white/10 rounded-lg text-xs text-zinc-400 hover:bg-emerald-500/10 hover:border-emerald-500/40 hover:text-white transition-all duration-300 cursor-default">Angular</span>
+              <span class="px-3 py-1.5 bg-white/3 border border-white/10 rounded-lg text-xs text-zinc-400 hover:bg-emerald-500/10 hover:border-emerald-500/40 hover:text-white transition-all duration-300 cursor-default">Go</span>
+              <span class="px-3 py-1.5 bg-white/3 border border-white/10 rounded-lg text-xs text-zinc-400 hover:bg-emerald-500/10 hover:border-emerald-500/40 hover:text-white transition-all duration-300 cursor-default">FastAPI</span>
+              <span class="px-3 py-1.5 bg-white/3 border border-white/10 rounded-lg text-xs text-zinc-400 hover:bg-emerald-500/10 hover:border-emerald-500/40 hover:text-white transition-all duration-300 cursor-default">GCP</span>
+              <span class="px-3 py-1.5 bg-white/3 border border-white/10 rounded-lg text-xs text-zinc-400 hover:bg-emerald-500/10 hover:border-emerald-500/40 hover:text-white transition-all duration-300 cursor-default">Docker</span>
+              <span class="px-3 py-1.5 bg-white/3 border border-white/10 rounded-lg text-xs text-zinc-400 hover:bg-emerald-500/10 hover:border-emerald-500/40 hover:text-white transition-all duration-300 cursor-default">Firestore</span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-8">
+            <div class="space-y-2">
+              <div class="flex items-center gap-2">
+                <div class="w-1 h-4 bg-emerald-500 rounded-full"></div>
+                <span class="text-white text-sm font-bold tracking-tight">{{ 'ABOUT.PERF_TITLE' | translate }}</span>
+              </div>
+              <p class="text-[11px] text-zinc-300 leading-relaxed uppercase tracking-wider">{{ 'ABOUT.PERF_DESC' | translate }}</p>
+            </div>
+            <div class="space-y-2">
+              <div class="flex items-center gap-2">
+                <div class="w-1 h-4 bg-cyan-500 rounded-full"></div>
+                <span class="text-white text-sm font-bold tracking-tight">{{ 'ABOUT.SCALE_TITLE' | translate }}</span>
+              </div>
+              <p class="text-[11px] text-zinc-300 leading-relaxed uppercase tracking-wider">{{ 'ABOUT.SCALE_DESC' | translate }}</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex justify-between items-center pt-8 border-t border-white/5 relative z-10 mt-12">
+          <div class="flex items-center gap-2.5">
+            <div class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            </div>
+            <span class="text-[10px] font-mono text-zinc-400 uppercase tracking-[0.2em]">{{ 'ABOUT.ACTIVE' | translate }}</span>
+          </div>
+          <div class="px-2.5 py-1 bg-zinc-900 rounded border border-white/5 text-[10px] font-mono text-zinc-200 group-hover:text-emerald-400 transition-colors">
+            {{ 'ABOUT.LATENCY' | translate }}
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
